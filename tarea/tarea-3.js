@@ -31,7 +31,7 @@ $calcularSegundosTotales.onclick = function(){
     const segundosClase1 = document.querySelector('#calculo-tiempo-total-clase-1')
 
     const resultado = document.querySelector('#resultado')
-
+    
 }
 
 
