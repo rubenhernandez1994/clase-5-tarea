@@ -18,10 +18,15 @@ let horas;
 
 console.log(document.querySelectorAll('.segundos-clase').length)
 
-const $segundosTotales = Number(document.querySelectorAll('.segundos-clase').value);
-for(let i = 0; i < $segundosTotales; i++) {
-    console.log($segundosTotales[i]);
+const $segundosTotales = document.querySelectorAll('.segundos-clase').value;
+function obtenerSegundos(){
+    for(let i = 0; i < $segundosTotales; i++) {
+        console.log(document.querySelectorAll('.segundos-clase').length)
+                
+    }
 }
+
+
 
 
 
