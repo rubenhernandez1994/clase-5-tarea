@@ -16,18 +16,20 @@ let segundos = 0;
 let minutos;
 let horas;
 
+console.log(document.querySelectorAll('.segundos-clase').length)
+
+const $segundosTotales = Number(document.querySelectorAll('.segundos-clase').value);
+for(let i = 0; i < $segundosTotales; i++) {
+    console.log($segundosTotales[i]);
+}
+
+
 
 $calcularSegundosTotales.onclick = function(){
-    const $horasTotales = Number(document.querySelector('.hora-clase').value);
-    const $minutosTotales = Number(document.querySelector('.minutos-clase').value);
-    const $segundosTotales = Number(document.querySelector('.segundos-clase').value);
+    const $horasTotales = Number(document.querySelectorAll('.hora-clase').value);
+    const $minutosTotales = Number(document.querySelectorAll('.minutos-clase').value);
+    const $segundosTotales = Number(document.querySelectorAll('.segundos-clase').value);
     
-    function calcularSegundosTotales() {
-        for (let i = 0; i < $segundosTotales.length; i++){
-            segundos = segundos + $segundosTotales[i];
-        }
-    }
-    console.log(calcularSegundosTotales)
-
+    
     return false
 }
