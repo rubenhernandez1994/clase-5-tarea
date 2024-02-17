@@ -7,34 +7,51 @@
 // <strong> pre-creado el tiempo total de los videos.
 
 
-const $calcularSegundosTotales = document.querySelector('#calcular')
-
-const SEGUNDOS_POR_MINUTO = 60;
-const MINUTOS_POR_HORA = 60;
-
-let segundos = 0;
-let minutos;
-let horas;
-
-console.log(document.querySelectorAll('.segundos-clase').length)
-
-const $segundosTotales = document.querySelectorAll('.segundos-clase').value;
-function obtenerSegundos(){
-    for(let i = 0; i < $segundosTotales; i++) {
-        console.log(document.querySelectorAll('.segundos-clase').length)
-                
-    }
-}
-
-
-
+const $calcularSegundosTotales = document.querySelector('#calcular');
 
 
 $calcularSegundosTotales.onclick = function(){
-    const $horasTotales = Number(document.querySelectorAll('.hora-clase').value);
-    const $minutosTotales = Number(document.querySelectorAll('.minutos-clase').value);
-    const $segundosTotales = Number(document.querySelectorAll('.segundos-clase').value);
-    
+    const SEGUNDOS_POR_MINUTO = 60;
+    const MINUTOS_POR_HORA = 60;
+    let sumaSegundos = calcularSegundos();
+    let sumaMinutos = calcularMinutos( ) + Math.floor(sumaSegundos/MINUTOS_POR_HORA);
+    let sumaHoras = calcularHoras() + Math.floor(sumaMinutos/SEGUNDOS_POR_MINUTO);      
+    sumaSegundos %= SEGUNDOS_POR_MINUTO;
+    sumaMinutos %= MINUTOS_POR_HORA
+    duracionTotalClases = `La duración total de las clases es de ${sumaHoras} horas, ${sumaMinutos} minutos y ${sumaSegundos} segundos`
+
+
+    document.querySelector('#resultado').textContent = duracionTotalClases
     
     return false
+}
+
+function calcularHoras(){
+    const $horasClases = document.querySelectorAll('.hora-clase');
+    let horasClases = 0;
+    for(let i=0; i<$horasClases.length; i++){
+        horasClases += Number($horasClases[i].value);
+    }
+
+    return horasClases;
+}
+ 
+function calcularMinutos(){
+    const $minutosClases = document.querySelectorAll('.minutos-clase');
+    let minutosClases = 0;
+    for(let i=0; i<$minutosClases.length; i++){
+        minutosClases += Number($minutosClases[i].value);
+    }
+
+    return minutosClases;
+}
+
+function calcularSegundos(){
+    const $segundosClases = document.querySelectorAll('.segundos-clase');
+    let segundosClases = 0;
+    for(let i=0; i<$segundosClases.length; i++){
+        segundosClases += Number($segundosClases[i].value);
+    }
+
+    return segundosClases;
 }
