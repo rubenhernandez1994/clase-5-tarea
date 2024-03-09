@@ -37,14 +37,14 @@ function calcularModa(array){
     }
 }
 
-const nodoPagina1 = document.querySelector('div');
-const nuevoP1 = document.createElement('p')
-const nuevoEmp1 = document.createElement('em')
-const textoParrafo1 = document.createTextNode(`El promedio es ${calcularPromedio($array)}`);
+    const nodoPagina1 = document.querySelector('div');
+    const nuevoP1 = document.createElement('p')
+    const nuevoEmp1 = document.createElement('em')
+    const textoParrafo1 = document.createTextNode(`El promedio es ${calcularPromedio($array)}`);
 
-nuevoEmp1.appendChild(textoParrafo1);
-nuevoP1.appendChild(nuevoEmp1)
-nodoPagina1.appendChild(nuevoP1);
+    nuevoEmp1.appendChild(textoParrafo1);
+    nuevoP1.appendChild(nuevoEmp1)
+    nodoPagina1.appendChild(nuevoP1);
 
 
 const nodoPagina2 = document.querySelector('div');
